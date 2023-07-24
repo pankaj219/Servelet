@@ -23,3 +23,45 @@ Clas  of these program must implement javax.servelet.servelet interface either d
 7)javax.servlrt.http.HttpSession interface
 8)javax.servlrt.ServetResponse inteface 
 9)javax.servlrt.ServeltContext interface 
+
+
+SEVERLET INTERFACE 
+==================
+Every server side program side program must implement this interface either directly or indirectly 
+
+public class AA implements Servlet
+{
+//override all method of servlet interface
+}
+This is an example of server side program 
+Since class of these program implement serverlet interface that 's why these program are also know as servelt 
+servlet interface has following 5 method 
+1) public void init (serveltConfig config) :: will be called by once when servlate will be  created object also  created  
+2) public void service (serveltRequest req ,sreveletResponse res)
+3) public void destroy()
+
+ these above method are life cycle method of servlet will be called by web service 
+ =================================================================================
+ 4)public String getServletInfo()
+ 5) public ServletConfig getServletConfig()
+
+
+ Life cycle of Servlet
+ =====================
+ Life cycle of servelet is managed by web server .It has following 5 phases /states 
+ 1) Loading servelet : it is done only once before creating object
+ 2) Instantiating servlet:object of the class is created .It is done only once
+ 3) Initializing servlet:Object is initialized .It is done only once
+ 4) Invoking service method :It is done each time user send request
+ 5) Destroying servlet:when object is destroyed .It is done only once
+
+ Remember activities performed between contruction of the object and destruction of the object is called life cycle .
+===================================================================================================================
+
+Service() method 
+================
+Since this method is called by web server on each request of user, so request processing code should be written inside thjs method.We can override it by following way 
+1) By implemeting Servlet interface
+2) By inherting GenericServlet class: It is implememtion of servelet interface
+3)  By inheriting HttpServlet class: It is child  of GenericServelet Class
+4) 
