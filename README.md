@@ -64,4 +64,55 @@ Since this method is called by web server on each request of user, so request pr
 1) By implemeting Servlet interface
 2) By inherting GenericServlet class: It is implememtion of servelet interface
 3)  By inheriting HttpServlet class: It is child  of GenericServelet Class
-4) 
+
+1)first way 
+public class DemoServerlet implements Servlet
+{
+//override all 5 methods here 
+}
+
+2) Second Way
+public class DemoServerlet extends  GenericServlet
+{
+//override service method only .you can override other method also. 
+}   
+
+3) Third way
+public class DemoServerlet extends  HtttpServlet
+{
+//override  methods that you want  
+}
+
+public void service(ServeletRequest req,HttpServletResponse res):It is a method of Servlet inertface 
+
+These are methods HttpServvlet class
+public void service(HttpServeletRequest req,HttpServletResponse res)
+public void doGet(HttpServeletRequest req,HttpServletResponse res)
+public void doPost(HttpServeletRequest req,HttpServletResponse res)
+public void doPut(HttpServeletRequest req,HttpServletResponse res)
+public void doDelete(HttpServeletRequest req,HttpServletResponse res)
+etc 
+
+Web server invokes/calls original service method
+if orginal service method is overriden by current servlet than it will be executed
+If not overridden than original service method calls duplicate service method 
+If duplicate service method is overriden by current servlet than it will be executed
+If not overridden than duplicate service method calls dogetor dopost or doput or dodelete etc method
+
+public void service(HttpServeletRequest req,HttpServletResponse res)
+====================================================================
+ As we see service method is parametrized and we know this method will be called by web server,so web server will pass two objects to this method.these objexts are as follows 
+ 
+1)Request object
+2)Request object
+
+Request object
+==============
+It is an object of HttpServletRequest interface.This object is created by web server before calling the service method .In this object web server stores data coming from 
+the browser(either alongwith URL or as body )
+If request method is get than data will be sent alongwith url of the request
+If request method is post than data will be sent alongwith url of the request
+As we know this data will be stored in request object by web server and web server passes reference of this object to the service method ,so service method can get this
+data from the request objetc
+Request object holds data in map as key-value pair
+
