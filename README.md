@@ -5,14 +5,14 @@ Buliding Sever Side Program
 These programs are responsible to process user/Browser request and generates response/content and sends reponse to the user/browser
 These program side program willbe excuted by web server
 Every server side program will have ana unique url
-we can build these program by using following two technologies
-1)Services
-2)JSP(java server pages)
+we can build these program by using following two technologies...................
+1)Services..........
+2)JSP(java server pages).....................................................................
 
 Servelets technology
 ====================
 By using this technology we can build dynamic web pages/server side program Code of server side program will be written using java language.We can also use HTML tags in these program .
-Clas  of these program must implement javax.servelet.servelet interface either directly or indirectly.Classes and interfaces of this technology has beeen built by web server vendors jar file (servlet-api.jar) of these classes and interface must be added into project using build path .
+Class  of these program must implement javax.servelet.servelet interface either directly or indirectly.Classes and interfaces of this technology has beeen built by web server vendors jar file (servlet-api.jar) of these classes and interface must be added into project using build path .
 
 1)javax.servlrt.Servlet interface
 2)javax.servlrt.GenericServelet class
@@ -34,36 +34,37 @@ public class AA implements Servlet
 //override all method of servlet interface
 }
 This is an example of server side program 
-Since class of these program implement serverlet interface that 's why these program are also know as servelt 
-servlet interface has following 5 method 
-1) public void init (serveltConfig config) :: will be called by once when servlate will be  created object also  created  
+Since class of these programs implement serverlet interface that's why these programs are also know as the servlet 
+servlet interface has the following 5 method ............................................................
+
+1) public void init (serveltConfig config) :: will be called by once when servlet will be  created object also  created  
 2) public void service (serveltRequest req ,sreveletResponse res)
 3) public void destroy()
 
- these above method are life cycle method of servlet will be called by web service 
+ these above methods are life cycle methods of servlet that will be called by web service 
  =================================================================================
  4)public String getServletInfo()
  5) public ServletConfig getServletConfig()
 
 
- Life cycle of Servlet
+ The life cycle of Servlet
  =====================
- Life cycle of servelet is managed by web server .It has following 5 phases /states 
- 1) Loading servelet : it is done only once before creating object
- 2) Instantiating servlet:object of the class is created .It is done only once
- 3) Initializing servlet:Object is initialized .It is done only once
- 4) Invoking service method :It is done each time user send request
- 5) Destroying servlet:when object is destroyed .It is done only once
+ The life cycle of the servelet is managed by the web server. It has the following 5 phases /states 
+ 1) Loading servelet: it is done only once before creating an object
+ 2) Instantiating servlet: an object of the class is created. It is done only once
+ 3) Initializing servlet: The object is initialized. It is done only once
+ 4) Invoking service method: It is done each time a user sends a request
+ 5) Destroying servlet: when the object is destroyed. It is done only once
 
- Remember activities performed between contruction of the object and destruction of the object is called life cycle .
+ Remember activities performed between the construction of the object and the destruction of the object are called the life cycle.
 ===================================================================================================================
 
 Service() method 
 ================
-Since this method is called by web server on each request of user, so request processing code should be written inside thjs method.We can override it by following way 
-1) By implemeting Servlet interface
-2) By inherting GenericServlet class: It is implememtion of servelet interface
-3)  By inheriting HttpServlet class: It is child  of GenericServelet Class
+Since this method is called by the web server on each request of the user, so request processing code should be written inside this method. We can override it by following the way .........................................................
+1) By implementing the Servlet interface.......................
+2) By inheriting GenericServlet class: It is an implementation of the servelet interface
+3)  By inheriting HttpServlet class: It is a child  of GenericServelet Class
 
 1)first way 
 public class DemoServerlet implements Servlet
@@ -74,7 +75,7 @@ public class DemoServerlet implements Servlet
 2) Second Way
 public class DemoServerlet extends  GenericServlet
 {
-//override service method only .you can override other method also. 
+//override service method only .you can override other methods also. 
 }   
 
 3) Third way
@@ -83,9 +84,10 @@ public class DemoServerlet extends  HtttpServlet
 //override  methods that you want  
 }
 
-public void service(ServeletRequest req,HttpServletResponse res):It is a method of Servlet inertface 
+public void service(ServeletRequest req, HttpServletResponse res): It is a method of Servlet interface ..........
 
-These are methods HttpServvlet class
+These are methods HttpServlet class...................................
+=======================================================================
 public void service(HttpServeletRequest req,HttpServletResponse res)
 public void doGet(HttpServeletRequest req,HttpServletResponse res)
 public void doPost(HttpServeletRequest req,HttpServletResponse res)
@@ -93,26 +95,26 @@ public void doPut(HttpServeletRequest req,HttpServletResponse res)
 public void doDelete(HttpServeletRequest req,HttpServletResponse res)
 etc 
 
-Web server invokes/calls original service method
-if orginal service method is overriden by current servlet than it will be executed
-If not overridden than original service method calls duplicate service method 
-If duplicate service method is overriden by current servlet than it will be executed
-If not overridden than duplicate service method calls dogetor dopost or doput or dodelete etc method
+The web server invokes/calls the original service method
+========================================================
+if the original service method is overridden by the current servlet then it will be executed
+If not overridden then the original service method calls the duplicate service method 
+If a duplicate service method is overridden by the current servlet then it will be executed
+If not overridden then duplicate service method calls together do post or do put or do delete etc method
 
-public void service(HttpServeletRequest req,HttpServletResponse res)
+public void service(HttpServeletRequest req, HttpServletResponse res)
 ====================================================================
- As we see service method is parametrized and we know this method will be called by web server,so web server will pass two objects to this method.these objexts are as follows 
+As we see service method is parametrized and we know this method will be called by the web server, so the web server will pass two objects to this method. these objects are as follows 
  
 1)Request object
 2)Request object
 
 Request object
 ==============
-It is an object of HttpServletRequest interface.This object is created by web server before calling the service method .In this object web server stores data coming from 
-the browser(either alongwith URL or as body )
-If request method is get than data will be sent alongwith url of the request
-If request method is post than data will be sent alongwith url of the request
-As we know this data will be stored in request object by web server and web server passes reference of this object to the service method ,so service method can get this
-data from the request objetc
-Request object holds data in map as key-value pair
+It is an object of the HttpServletRequest interface. This object is created by the web server before calling the service method. In this object web server stores data coming from the browser(either along with URL or as the body )
+If the request method is getting than data will be sent along with URL of the request
+If the request method is post then data will be sent along with URL of the request
+As we know this data will be stored in request object by the web server and the web server passes the reference of this object to the service method,so the service method can get this
+data from the request object
+The request object holds data in the map as key-value pair
 
